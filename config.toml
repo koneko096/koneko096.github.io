@@ -1,0 +1,14 @@
+baseurl = "https://icalF.github.io"
+languageCode = "en-us"
+title = "Hajimemashite"
+newContentEditor = "vim"
+theme = "purehugo"
+pygmentsStyle = "native"
+draft = false
+Paginate = 8
+
+[params]
+  twitterName = "ical_fikr"
+  githubName = "icalF"
+  description = "Yoroshiku onegaishimasu"
+  hideShareOptions = true

@@ -1,0 +1,11 @@
+contentdir: "content"
+languageCode: "en-us"
+layoutdir: "layouts"
+publishdir: "public"
+Paginate: 8
+indexes:
+  category: "categories"
+baseurl: "http://icalF.github.io/hugo_gh_blog"
+title: "Hajimemashite"
+canonifyurls: true
+theme: "purehugo"
