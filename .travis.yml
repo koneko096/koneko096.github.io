@@ -3,20 +3,19 @@ go:
   - 1.7.1
 env:
   global:
-    - SSH_KEY="travis_key"
+    - SSH_KEY="id_rsa"
     - GIT_NAME="icalF"
     - GIT_EMAIL="laser.survivor@gmail.com"
     - SOURCE_DIR="public"
     - DEPLOY_BRANCH="source"
     - TEMP_DIR=$(sudo mktemp -d /tmp/$REPO_NAME.XXXX)
 before_install:
-  - openssl aes-256-cbc -K $encrypted_a24742169c78_key -iv $encrypted_a24742169c78_iv -in id_rsa.enc -out id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_a24742169c78_key -iv $encrypted_a24742169c78_iv -in $SSH_KEY.enc -out $SSH_KEY -d
 before_script:
   - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
   - go get -u -v github.com/spf13/hugo
 script:
-  - git submodule init
   - hugo
 after_success:
-  - chmod a+x ./scripts/publish.sh
-  - ./scripts/publish.sh
+  - chmod a+x ./publish.sh
+  - ./publish.sh
