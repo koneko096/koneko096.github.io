@@ -1,6 +1,7 @@
 baseurl = "https://icalF.github.io"
 languageCode = "en-us"
 title = "Hajimemashite"
+enableEmoji = false
 newContentEditor = "vim"
 theme = "purehugo"
 pygmentsStyle = "native"
