@@ -1,0 +1,29 @@
+{
+  "name": "icalf.github.io",
+  "version": "0.0.1",
+  "description": "Personal blog and porto",
+  "main": "index.js",
+  "scripts": {
+    "index": "hugo-lunr -i \"content/report/**\" -o public/index.json",
+    "dev": "hugo server",
+    "build": "hugo && npm run index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icalF/icalF.github.io.git"
+  },
+  "keywords": [
+    "blog",
+    "landing-page",
+    "portfolio"
+  ],
+  "author": "icalF",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icalF/icalF.github.io/issues"
+  },
+  "homepage": "https://github.com/icalF/icalF.github.io#readme",
+  "devDependencies": {
+    "hugo-lunr": "0.0.4"
+  }
+}

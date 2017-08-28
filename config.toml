@@ -1,15 +1,19 @@
-baseurl = "https://icalF.github.io/blog"
+baseurl = "https://icalF.github.io"
 languageCode = "en-us"
-title = "Hajimemashite"
+title = "Postmortem"
 enableEmoji = true
 newContentEditor = "vim"
+hasCJKLanguage = true
 theme = "purehugo"
 pygmentsStyle = "native"
 draft = false
 Paginate = 8
 
+[permalinks]
+  report = "/report/:year/:month/:day/:title"
+
 [params]
   twitterName = "ical_fikr"
   githubName = "icalF"
-  description = "Yoroshiku onegaishimasu"
+  description = "Ical's incident reports"
   hideShareOptions = true

@@ -1,0 +1,9 @@
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.post-summary {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

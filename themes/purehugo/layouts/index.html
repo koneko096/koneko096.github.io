@@ -8,7 +8,7 @@
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
                 {{ range .Paginator.Pages }}
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
+                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006" }}</h1>
                 <section class="post">
                     <header class="post-header">
 
@@ -26,9 +26,15 @@
                         </p>
                     </header>
 
-                    <div class="post-description">
-                        {{ .Content }}
+                    <div class="post-description post-summary">
+                        {{ .Summary }}
                     </div>
+                    {{ if .Truncated }}
+                    <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+                    <div>
+                        <a class="post-category" href="{{ .RelPermalink }}">Read More</a>
+                    </div>
+                    {{ end }}
                 </section>
                 {{ end }}
             </div>
@@ -37,7 +43,6 @@
         </div>
     </div>
 </div>
-
 {{ partial "analytics.html" . }}
 </body>
 </html>

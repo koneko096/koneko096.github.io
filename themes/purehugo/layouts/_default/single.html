@@ -7,7 +7,7 @@
         <div>
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
+                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006" }}</h1>
                 <section class="post">
                     <header class="post-header">
 
@@ -24,10 +24,12 @@
                             {{ end }}
                         </p>
                     </header>
+                    <div class="post-description">
+                        {{ .Content }}
+                    </div>
                     {{ if not .Site.Params.hideShareOptions }}
                     <div class="post-share">
                         <div class="post-share-links">
-                            <h4 style="">Share</h4>
                             {{ if isset .Site.Params "facebook" }}
                             <a href="#" data-type="facebook" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}" data-media="" class="prettySocial fa fa-facebook"></a>
                             {{ end }}
@@ -37,13 +39,9 @@
                             {{ if isset .Site.Params "twitter" }}
                             <a href="#" data-type="twitter" data-url="{{ .Permalink }}" data-description="{{ .Description }}" data-via="{{ .Site.Params.twitter }}" class="prettySocial fa fa-twitter"></a>
                             {{ end }}
-                            
                         </div>
                     </div>
                     {{ end }}
-                    <div class="post-description">
-                        {{ .Content }}
-                    </div>
                     {{ template "_internal/disqus.html" . }}
                 </section>
             </div>

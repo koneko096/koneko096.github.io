@@ -14,9 +14,11 @@ before_install:
 before_script:
   - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
   - go get -u -v github.com/spf13/hugo
+  - npm install
 script:
   - hugo version
-  - hugo -v
+  - npm version
+  - npm run build
   - ls $SOURCE_DIR -al
 after_success:
   - chmod a+x ./publish.sh
