@@ -2,6 +2,7 @@
 Categories = ["software engineering", "testing"]
 Tags = ["burp", "intercept", "proxy", "testing"]
 date = "2017-08-26"
+draft = true
 title = "Debugging External Request Error Easier with Burp"
 +++
 
