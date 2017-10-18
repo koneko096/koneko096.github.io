@@ -8,4 +8,4 @@ indexes:
 baseurl: "http://icalF.github.io/blog"
 title: "Hajimemashite"
 canonifyurls: true
-theme: "purehugo"
+#theme: "purehugo"

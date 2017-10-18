@@ -1,6 +1,6 @@
 +++
-Categories = ["security", "bug", "development", "testing"]
-Tags = ["security", "bug", "development", "testing", ""]
+categories = ["security", "bug", "development", "testing"]
+tags = ["security", "bug", "development", "testing", ""]
 date = "2017-10-17"
 title = "Exploding Image"
 +++

@@ -2,9 +2,10 @@ baseurl = "https://icalF.github.io"
 languageCode = "en-us"
 title = "Postmortem"
 enableEmoji = true
+copyright = "&copy; <a href=\"https://github.com/icalF\">Afrizal Fikri</a> 2017"
 newContentEditor = "vim"
 hasCJKLanguage = true
-theme = "purehugo"
+theme = "hemingway"
 pygmentsStyle = "native"
 draft = false
 Paginate = 8
@@ -13,7 +14,18 @@ Paginate = 8
   report = "/report/:year/:month/:day/:title"
 
 [params]
-  twitterName = "ical_fikr"
-  githubName = "icalF"
-  description = "Ical's incident reports"
-  hideShareOptions = true
+[params.highlight]
+style = "github"
+languages = ["go", "java", "javascript"]
+
+[[params.social]]
+url = "https://github.com/icalF"
+fa_icon = "fa-github"
+
+[[params.social]]
+url = "https://twitter.com/ical_fikr"
+fa_icon = "fa-twitter"
+
+[[params.social]]
+url = "/index.xml"
+fa_icon = "fa-rss"
