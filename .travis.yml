@@ -14,7 +14,9 @@ before_install:
 install:
   - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
   - curl -O https://github.com/gohugoio/hugo/releases/download/v0.29/hugo_0.29_Linux-64bit.tar.gz
-  - tar xf hugo_0.29_Linux-64bit.tar.gz
+  - file hugo_0.29_Linux-64bit.tar.gz
+  - mv hugo_0.29_Linux-64bit.tar.gz hugo.tar
+  - tar xvf hugo.tar
   - hugo version
   - npm version
   - npm install
