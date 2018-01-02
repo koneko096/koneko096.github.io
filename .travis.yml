@@ -1,16 +1,7 @@
 language: go
 go:
   - 1.9
-env:
-  global:
-    - SSH_KEY="id_rsa"
-    - GIT_NAME="icalF"
-    - GIT_EMAIL="laser.survivor@gmail.com"
-    - SOURCE_DIR="public"
-    - DEPLOY_BRANCH="source"
-    - TEMP_DIR=$(sudo mktemp -d /tmp/$REPO_NAME.XXXX)
-before_install:
-  - openssl aes-256-cbc -K $encrypted_a24742169c78_key -iv $encrypted_a24742169c78_iv -in $SSH_KEY.enc -out $SSH_KEY -d
+
 install:
   - go get github.com/kardianos/govendor
   - govendor get github.com/gohugoio/hugo
@@ -20,7 +11,7 @@ install:
   - npm install
 script:
   - npm run build
-  - ls $SOURCE_DIR -al
+  - ls public -al
 deploy:
   provider: pages
   local_dir: public
