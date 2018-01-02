@@ -21,6 +21,11 @@ install:
 script:
   - npm run build
   - ls $SOURCE_DIR -al
-after_success:
-  - chmod a+x ./publish.sh
-  - ./publish.sh
+deploy:
+  provider: pages
+  local_dir: public
+  target_branch: master
+  skip_cleanup: true
+  github_token: $GH_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: source
