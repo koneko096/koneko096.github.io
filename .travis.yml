@@ -2,6 +2,10 @@ language: go
 go:
   - 1.9
 
+cache:
+  directories:
+    - $GOPATH/src
+    - $GOPATH/pkg
 install:
   - go get github.com/kardianos/govendor
   - govendor get github.com/gohugoio/hugo
