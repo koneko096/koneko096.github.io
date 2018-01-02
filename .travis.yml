@@ -1,5 +1,4 @@
 language: go
-sudo: required
 go:
   - 1.7.1
 env:
@@ -13,7 +12,9 @@ env:
 before_install:
   - openssl aes-256-cbc -K $encrypted_a24742169c78_key -iv $encrypted_a24742169c78_iv -in $SSH_KEY.enc -out $SSH_KEY -d
 install:
-  - sudo apt-get install hugo
+  - go get github.com/kardianos/govendor
+  - govendor get github.com/gohugoio/hugo
+  - go install github.com/gohugoio/hugo
   - hugo version
   - npm version
   - npm install
