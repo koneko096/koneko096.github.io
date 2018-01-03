@@ -24,20 +24,34 @@ Before we dive into RL, I suggest you to understand about machine learning in ge
 
 Reinforcement learning is an exciting area of machine learning. It can be classified somewhat between supervised and unsupervised learning. Because basically it is the learning method to make an efficient strategy in a given environment. 
 
-There are few core component of reinforment learning: **environment state**, **action**, **observation state**, **policy**, and **reward**. Agent will make action for every timestep. Every action from the agent will affect the environment. And then environment will make feedback with reward and change of environment state. Depend on the problems, environment state will be observed by agent to make update to internal state of agent --called observation state.
+There are few core component of reinforment learning: **environment state**, **action**, **observation state**, **policy**, and **reward**. Agent will make action for every timestep. Every action from the agent will affect the environment. And then environment will make feedback with reward and change of environment state. Depend on the problems, environment state will be observed by agent to make update to internal state of agent --called observation state. Action which chosen by agent called policy. Policy can depend on observation state or not (maybe random or fixed).
 
 {{< figure src="https://cdn-images-1.medium.com/max/1600/1*HvoLc50Dpq1ESKuejhICHg.png" title="RL loopback" >}}
 
-Main goal of RL is to determine the best policy in order to maximize the rewards. This process can be modeled as the optimisation problem, like gradient ascent or hill climbing. But now, how we can measure policy performance? There are 2 main approaches, **policy based method** and **value based method**.
+Main goal of RL is to determine the best policy in order to maximize the *expected rewards*. After that, this problem no more than an optimisation problem, which can be solve using gradient descent or hill climbing. For example, suppose there is grid world 2D like below.
+
+We can just move to right all the time. But there are cases which is moving left is definitely better. To achieve the best policy, sometimes we need to leave the most promising policy to explore another uncertain policy. This problem known as [**exploration vs exploitation dilemma**](http://www.cs.cmu.edu/~rsalakhu/10703/Lecture_Exploration.pdf). 
+
+Using value function, we could determine whether our policy is good enough or need to be improved. Basically, there are 2 main method for policy improvement, by using **policy update** and **value update**. Value based method perform update by choosing maximum value available for each state by given all action we can do. On the other hand, policy based method only concern about reward changes by changing policy trajectory. For further explanation, I suggest you to read my references on the bottom of this page. My post here will focus only on my experiment about Atari Pong games.
 
 # Get to the Observation
 
-# Ready to Train!
+{{< figure src="http://karpathy.github.io/assets/rl/pong.gif" title="Pong table" >}}
 
-# Conclusions
+In this experiment, I prefer a policy based algorithm called policy gradient. In plain English, policy gradient is a method to compute rate of reward change over a policy applied at current state. Probabilities for each action will increase based on cumulative reward reached. Higher reward gotten, higher chance the action will be performed
+
+There are some concerns about that. First, our pong table is an example of continous environment. Even though our monitor screen is finite, of course we cannot enumerate all possible states of pong table condition.
+
+I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. For the input, we are given a `210x160x3` byte array represent a window frame. There are 6 available action in the environment given so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer. Briefly, this is scheme
+
+
+In this, I am going to policy based method to 
+
+# Remarks
 
 # References
 - Reinforcement Learning: An Introduction by Sutton
+- [CS213n Convolutional Neural Ne for Visual Recognition course slide about RL](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture14.pdf)
 - [Deep Reinforcement Learning Demysitifed (Episode 2) — Policy Iteration, Value Iteration and Q-learning](https://medium.com/@m.alzantot/deep-reinforcement-learning-demysitifed-episode-2-policy-iteration-value-iteration-and-q-978f9e89ddaa)
 - [Pong with Reinforcement Learning Tutorial](http://karpathy.github.io/2016/05/31/rl/)
 - [Simple RL Series with Tensorflow](https://medium.com/@awjuliani/super-simple-reinforcement-learning-tutorial-part-2-ded33892c724)
