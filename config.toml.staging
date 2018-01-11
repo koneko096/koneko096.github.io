@@ -1,0 +1,13 @@
+baseurl = "https://icalF.github.io/staging"
+languageCode = "en-us"
+title = "Postmortem"
+enableEmoji = true
+copyright = "&copy; <a href=\"https://github.com/icalF\">Afrizal Fikri</a> 2017"
+hasCJKLanguage = true
+theme = "hemingway"
+pygmentsStyle = "native"
+draft = true
+Paginate = 8
+
+[permalinks]
+  report = "/report/:year/:month/:day/:title"
