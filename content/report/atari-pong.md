@@ -38,16 +38,24 @@ Using value function, we could determine whether our policy is good enough or ne
 
 {{< figure src="http://karpathy.github.io/assets/rl/pong.gif" title="Pong table" >}}
 
-In this experiment, I prefer a policy based algorithm called policy gradient. In plain English, policy gradient is a method to compute rate of reward change over a policy applied at current state. Probabilities for each action will increase based on cumulative reward reached. Higher reward gotten, higher chance the action will be performed
+Now, we are going to decide which method will we use. There are some concerns about that. First of all, our pong table is an example of **continous environment**. Even though our monitor screen is finite, of course we cannot enumerate all possible states of pong table condition. In the AlphaGo case, it will be done using some kind of heavy-pruned tree search. But, we still prefer using policy based method. Hence, in this experiment I chose policy gradient. 
 
-There are some concerns about that. First, our pong table is an example of continous environment. Even though our monitor screen is finite, of course we cannot enumerate all possible states of pong table condition.
+In plain English, policy gradient is a method to compute rate of reward change over a policy applied at current state. Probabilities for each action will increase based on cumulative reward reached. Higher reward gotten, higher chance the action will be performed
 
-I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. For the input, we are given a `210x160x3` byte array represent a window frame. There are 6 available action in the environment given so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer.
+I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. And the best part of it is they are given in **discrete inputs**.
+
+Next, we need to design our DNN structure. For the input, we are given a `210x160x3` byte array represent a window frame. We would like to preprocessing this frame to make it easier for our NN doing learning. This can be done by crop the outside border and convert all pixel to binary color (black and white). There are 6 available action in the environment given, so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer.
 
 
-In this, I am going to policy based method to maximize rewards gotten. We will define a cost function using average rewards of the last 100 episodes. Updating performed for each batch of 10 episodes. Each episode consist of multiple games of arbitrary number. Whenever one of player score 21 first, episode will end. Total score computed from sum of score we got from each games. If we fail to return the ball, we get -1. Otherwise, we get 1.
+Then, we will connect our DNN to policy gradient to compose a deep RL network. We will define a cost function using average rewards of the last 100 episodes. Updating performed for each batch of 10 episodes. Each episode consist of multiple games of arbitrary number. Whenever one of the players score 21 first, episode will end. Total score computed from sum of score we got from each games. If we fail to return the ball, supply -1. Otherwise, we get 1.
+
+Weights updating will be performed by applying gradient descent with the batch score as multiplier. In other words, probability of a policy trajectory will be updated based on score. Greater the score obtained, probabilities will be increased. After thousands plays, the optimal trajectory will get the biggest score --thus, biggest probability.
 
 # Remarks
+
+We should be ready to the training now! Now, install `numpy` and `gym`. And then, you can copy from my implementation [here]() or [Karpathy's](https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5) (with different neural anatomy). What you should do is just make some coffee and wait about a day. Your model should be ready to test then.
+
+After training has completed, you can run the script with turning on param `resume` and `render` to view the gameplay. You can notice that your agent has smart enough to beat the hardcoded AI. It also can perform and even return a smash. Pretty interesting. Maybe I will make the mobile version from this model. But for now, I think my FYP comes first :smiley_cat:
 
 # References
 - Reinforcement Learning: An Introduction by Sutton
