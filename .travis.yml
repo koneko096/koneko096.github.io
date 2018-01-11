@@ -32,7 +32,7 @@ deploy:
 - provider: pages
   local_dir: public
   repo: icalF/staging
-  target_branch: staging
+  target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
   on:
