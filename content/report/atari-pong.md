@@ -2,7 +2,7 @@
 categories = ["artificial intelligence", "machine learning", "experiment", "deep learning", "reinforcement learning"]
 tags = []
 date = "2017-12-28"
-draft = true
+#draft = true
 title = "Deep Reinforcement Learning Note 1 - Playing Pong with Policy Gradient"
 +++
 
@@ -42,10 +42,10 @@ In this experiment, I prefer a policy based algorithm called policy gradient. In
 
 There are some concerns about that. First, our pong table is an example of continous environment. Even though our monitor screen is finite, of course we cannot enumerate all possible states of pong table condition.
 
-I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. For the input, we are given a `210x160x3` byte array represent a window frame. There are 6 available action in the environment given so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer. Briefly, this is scheme
+I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. For the input, we are given a `210x160x3` byte array represent a window frame. There are 6 available action in the environment given so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer.
 
 
-In this, I am going to policy based method to 
+In this, I am going to policy based method to maximize rewards gotten. We will define a cost function using average rewards of the last 100 episodes. Updating performed for each batch of 10 episodes. Each episode consist of multiple games of arbitrary number. Whenever one of player score 21 first, episode will end. Total score computed from sum of score we got from each games. If we fail to return the ball, we get -1. Otherwise, we get 1.
 
 # Remarks
 

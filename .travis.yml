@@ -17,10 +17,20 @@ script:
   - npm run build
   - ls public -al
 deploy:
-  provider: pages
+
+- provider: pages
   local_dir: public
   target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: source
+    
+- provider: pages
+  local_dir: public
+  repo: icalF/staging
+  target_branch: staging
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  on:
+    branch: staging
