@@ -6,6 +6,7 @@ cache:
   directories:
     - $GOPATH/src
     - $GOPATH/pkg
+
 install:
   - go get github.com/kardianos/govendor
   - govendor get github.com/gohugoio/hugo
@@ -13,9 +14,11 @@ install:
   - hugo version
   - npm version
   - npm install
+
 script:
   - npm run build
   - ls public -al
+
 deploy:
 
 - provider: pages
