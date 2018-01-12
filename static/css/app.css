@@ -5,7 +5,8 @@ figure {
 }
 
 figure > img {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .post-summary {
@@ -17,5 +18,10 @@ figcaption > h4 {
   font-size: 14px;
   font-style: italic;
   text-align: center;
-  margin-top: 0;
+  margin-top: 10px;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
 }

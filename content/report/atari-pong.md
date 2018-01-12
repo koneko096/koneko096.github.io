@@ -1,10 +1,14 @@
 +++
 categories = ["artificial intelligence", "machine learning", "experiment", "deep learning", "reinforcement learning"]
 tags = []
-date = "2017-12-28"
+date = "2018-01-12"
 #draft = true
 title = "Deep Reinforcement Learning Note 1 - Playing Pong with Policy Gradient"
 +++
+
+This is my first post in this year and also my first post about machine learning. Formerly, I think I am gonna make this blog only for low-level and security playground only --that's why the name is postmortem. But, as you know life is dynamic! That's makes it interesting :smiley:
+
+# Prelude 
 
 It's been over a year since AlphaGo wins its match versus Lee Sedol with great victory. And not so long ago, AlphaGo Zero --self taught version of AlphaGo-- has been [published](https://deepmind.com/blog/alphago-zero-learning-scratch/). One of the core component of AlphaGo is DQN --deep Q-network which had successfully completed a diverse of [classic Atari games](https://deepmind.com/research/dqn/).
 
@@ -54,6 +58,8 @@ Weights updating will be performed by applying gradient descent with the batch s
 # Remarks
 
 We should be ready to the training now! Now, install `numpy` and `gym`. And then, you can copy from my implementation [here]() or [Karpathy's](https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5) (with different neural anatomy). What you should do is just make some coffee and wait about a day. Your model should be ready to test then.
+
+<iframe src="https://player.twitch.tv/?autoplay=false&video=v217508624" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/217508624?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch Atari Pong from icalicul on www.twitch.tv</a>
 
 After training has completed, you can run the script with turning on param `resume` and `render` to view the gameplay. You can notice that your agent has smart enough to beat the hardcoded AI. It also can perform and even return a smash. Pretty interesting. Maybe I will make the mobile version from this model. But for now, I think my FYP comes first :smiley_cat:
 
