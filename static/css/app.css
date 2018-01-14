@@ -4,6 +4,15 @@ figure {
   padding-bottom: 20px;
 }
 
+.title {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.content > h1 {
+  font-weight: 500;
+}
+
 figure > img {
   display: block;
   margin: 0 auto;
