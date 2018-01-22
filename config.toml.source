@@ -22,6 +22,14 @@ style = "github"
 languages = ["go", "java", "javascript"]
 
 [[params.social]]
+url = "https://facebook.com/icalFikr"
+fa_icon = "fa-facebook"
+
+[[params.social]]
+url = "https://t.me/icalF"
+fa_icon = "fa-telegram"
+
+[[params.social]]
 url = "https://github.com/icalF"
 fa_icon = "fa-github"
 
