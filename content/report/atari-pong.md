@@ -61,7 +61,7 @@ After training has completed, you can run the script with turning on param `resu
 
 # References
 - Reinforcement Learning: An Introduction by Sutton
-- [CS213n Convolutional Neural Ne for Visual Recognition course slide about RL](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture14.pdf)
+- [CS213n Convolutional Neural Net for Visual Recognition course slide about RL](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture14.pdf)
 - [Deep Reinforcement Learning Demysitifed (Episode 2) — Policy Iteration, Value Iteration and Q-learning](https://medium.com/@m.alzantot/deep-reinforcement-learning-demysitifed-episode-2-policy-iteration-value-iteration-and-q-978f9e89ddaa)
 - [Pong with Reinforcement Learning Tutorial](http://karpathy.github.io/2016/05/31/rl/)
 - [Simple RL Series with Tensorflow](https://medium.com/@awjuliani/super-simple-reinforcement-learning-tutorial-part-2-ded33892c724)
