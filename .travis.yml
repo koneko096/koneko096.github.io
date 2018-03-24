@@ -11,11 +11,11 @@ cache:
 
 install:
   - if [ -d "$GOPATH/src/github.com/magefile/mage" ]; then
-  -   go get github.com/magefile/mage
-  - fi
+      go get github.com/magefile/mage;
+    fi
   - if [ -d "$GOPATH/src/github.com/gohugoio/hugo" ]; then
-  -   go get -d github.com/gohugoio/hugo
-  - fi
+      go get -d github.com/gohugoio/hugo;
+    fi
   - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
   - mage vendor
   - mage install
