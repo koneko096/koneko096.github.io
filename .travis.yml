@@ -4,17 +4,21 @@ go:
 
 cache:
   directories:
-    - $GOPATH/src/github.com/kardianos
+    - $GOPATH/src/github.com/magefile
     - $GOPATH/src/github.com/gohugoio
     - $GOPATH/pkg
+    - $GOPATH/bin
 
 install:
-  - go get github.com/magefile/mage
-  - go get -d github.com/gohugoio/hugo
+  - if [ -d "$GOPATH/src/github.com/magefile/mage" ]; then
+  -   go get github.com/magefile/mage
+  - fi
+  - if [ -d "$GOPATH/src/github.com/gohugoio/hugo" ]; then
+  -   go get -d github.com/gohugoio/hugo
+  - fi
   - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
   - mage vendor
   - mage install
-  
   - cd $TRAVIS_BUILD_DIR
   - hugo version
   - npm version
