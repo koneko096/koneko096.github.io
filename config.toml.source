@@ -18,7 +18,7 @@ googleAnalytics = "UA-111769411-1"
   
 [params.highlight]
 style = "github"
-languages = ["go", "java", "javascript"]
+languages = ["python", "go", "java", "javascript", "bash", "elixir"]
 
 [[params.social]]
 url = "https://facebook.com/icalFikr"
