@@ -1,4 +1,4 @@
-baseurl = "https://icalF.github.io/staging"
+baseurl = "https://koneko096.github.io/staging"
 languageCode = "en-us"
 title = "Postmortem"
 enableEmoji = true
