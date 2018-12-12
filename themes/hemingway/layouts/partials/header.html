@@ -21,7 +21,7 @@
 {{ end }}
 <!-- End of Open Graph -->
 <!-- Start of Twitter -->
-<meta property="twitter:card" content="{{ .Summary | plainify | safeHTML }}"/>
+<meta property="twitter:card" content="{{ .Title }} | {{ .Site.Title }}"/>
 <meta property="twitter:description" content="{{ .Summary | plainify | safeHTML }}"/>
 <meta property="twitter:title" content="{{ .Title }}"/>
 <!-- End of Twitter -->
