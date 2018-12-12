@@ -21,9 +21,9 @@
 {{ end }}
 <!-- End of Open Graph -->
 <!-- Start of Twitter -->
-<meta property="twitter:card" content="{{ .Title }} | {{ .Site.Title }}"/>
-<meta property="twitter:description" content="{{ .Summary | plainify | safeHTML }}"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="{{ .Title }}"/>
+<meta property="twitter:description" content="{{ .Summary | plainify | safeHTML }}"/>
 <!-- End of Twitter -->
 {{ .Hugo.Generator }}
 <title>{{ .Title }}{{ if eq .IsHome false }} | {{ .Site.Title }}{{ end }}</title>
