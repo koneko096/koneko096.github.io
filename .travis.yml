@@ -4,8 +4,7 @@ go:
 
 cache:
   directories:
-    - $GOPATH/src/github.com/magefile
-    - $GOPATH/src/github.com/gohugoio
+    - $GOPATH/src
     - $GOPATH/pkg
     - $GOPATH/bin
 
@@ -38,7 +37,7 @@ deploy:
     
 - provider: pages
   local_dir: public
-  repo: icalF/staging
+  repo: koneko096/staging
   target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
