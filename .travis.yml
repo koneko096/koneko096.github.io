@@ -1,6 +1,6 @@
 language: go
 go:
-  - 1.9
+  - 1.11.1
 
 cache:
   directories:
@@ -10,17 +10,11 @@ cache:
     - $GOPATH/bin
 
 install:
-  #[ ! -d "$GOPATH/src/github.com/magefile/mage" ]; then
-  - if true; then 
-      go get github.com/magefile/mage;
-    fi
-  - if true; then
-      go get -d github.com/gohugoio/hugo;
-      cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo;
-      mage vendor;
-      mage install;
-      cd $TRAVIS_BUILD_DIR;
-    fi
+  - cd $HOME
+  - git clone https://github.com/gohugoio/hugo.git
+  - cd hugo
+  - go install --tags extended
+  - cd $TRAVIS_BUILD_DIR;
   - hugo version
   - npm version
   - npm install
