@@ -10,7 +10,8 @@ cache:
     - $GOPATH/bin
 
 install:
-  - if [ ! -d "$GOPATH/src/github.com/magefile/mage" ]; then
+  #[ ! -d "$GOPATH/src/github.com/magefile/mage" ]; then
+  - if true; then 
       go get github.com/magefile/mage;
     fi
   - if true; then
