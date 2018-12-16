@@ -1,6 +1,6 @@
 language: go
 go:
-  - 1.11.1
+  - 1.9.4
 
 cache:
   directories:
@@ -9,11 +9,12 @@ cache:
     - $GOPATH/bin
 
 install:
-  - cd $HOME
-  - git clone https://github.com/gohugoio/hugo.git
-  - cd hugo
-  - go install --tags extended
-  - cd $TRAVIS_BUILD_DIR;
+  - uname -a
+  - cd $TRAVIS_BUILD_DIR
+  - curl -L -O $HUGO_URL
+  - tar xzf $ARCHIVE
+  - chmod +x hugo
+  - mv hugo $GOPATH/bin
   - hugo version
   - npm version
   - npm install
