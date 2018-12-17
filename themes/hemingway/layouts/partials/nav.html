@@ -6,13 +6,12 @@
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
-          {{ range .Site.Params.social }}
-          <a class="level-item" href="{{ .url }}">
-            <span class="icon">
-              <i class="fa {{ .fa_icon }}"></i>
-            </span>
+          <a class="level-item" href="/about">
+            <h2 class="is-4">About</h2>
           </a>
-          {{ end }}
+          <a class="level-item" href="/faq">
+            <h2 class="is-4">FAQ</h2>
+          </a>
         </nav>
       </div>
     </nav>

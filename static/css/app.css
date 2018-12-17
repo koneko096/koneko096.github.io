@@ -34,3 +34,19 @@ iframe {
   display: block;
   margin: 0 auto;
 }
+
+.nav .level-item {
+  margin-left: 30px;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.footer-bar {
+  margin-top: 10px;
+}
+
+.footer-bar a {
+  color: #42464c;
+}

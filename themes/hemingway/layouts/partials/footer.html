@@ -1,6 +1,16 @@
 <section class="section">
   <div class="container has-text-centered">
     <p>{{ .Site.Copyright | safeHTML }}</p>
+    
+    <div class="footer-bar">
+      {{ range .Site.Params.social }}
+      <a class="level-item" href="{{ .url }}">
+        <span class="icon">
+          <i class="fa {{ .fa_icon }}"></i>
+        </span>
+      </a>
+      {{ end }}
+    </div>
   </div>
 </section>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
