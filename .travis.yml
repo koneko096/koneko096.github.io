@@ -2,12 +2,6 @@ language: go
 go:
   - 1.9.4
 
-cache:
-  directories:
-    - $GOPATH/src
-    - $GOPATH/pkg
-    - $GOPATH/bin
-
 install:
   - uname -a
   - cd $TRAVIS_BUILD_DIR
