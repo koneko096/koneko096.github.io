@@ -1,25 +1,20 @@
 language: go
 go:
-  - 1.9
+  - 1.9.4
 
 cache:
   directories:
-    - $GOPATH/src/github.com/magefile
-    - $GOPATH/src/github.com/gohugoio
+    - $GOPATH/src
     - $GOPATH/pkg
     - $GOPATH/bin
 
 install:
-  - if [ ! -d "$GOPATH/src/github.com/magefile/mage" ]; then
-      go get github.com/magefile/mage;
-    fi
-  - if true; then
-      go get -d github.com/gohugoio/hugo;
-      cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo;
-      mage vendor;
-      mage install;
-      cd $TRAVIS_BUILD_DIR;
-    fi
+  - uname -a
+  - cd $TRAVIS_BUILD_DIR
+  - curl -L -O $HUGO_URL
+  - tar xzf $ARCHIVE
+  - chmod +x hugo
+  - mv hugo $GOPATH/bin
   - hugo version
   - npm version
   - npm install
@@ -43,7 +38,7 @@ deploy:
     
 - provider: pages
   local_dir: public
-  repo: icalF/staging
+  repo: koneko096/staging
   target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
