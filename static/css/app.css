@@ -35,7 +35,8 @@ iframe {
   margin: 0 auto;
 }
 
-.nav .level-item {
+.nav-item .level-item {
+  margin-top: 6px;
   margin-left: 30px;
 }
 

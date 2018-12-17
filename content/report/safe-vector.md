@@ -3,6 +3,7 @@ categories = ["testing"]
 tags = ["debug", "error handling"]
 date = "2018-12-16"
 title = "Work Safely with C++ Vector"
+type = "article"
 +++
 
 One of the notable feature of C++ (also C# and Obj-C) is operator overloading. In C++ vector, element can be accessed use "[]" bracket operator. Sounds good just like we accessing ordinary array. But there are problems with it. As the original behavior of array, accessing index out of allocated size will cause undefined behavior. Vector just doing so by preserving this behavior to the operator. 

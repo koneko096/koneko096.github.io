@@ -6,12 +6,11 @@
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
-          <a class="level-item" href="/about">
-            <h2 class="is-4">About</h2>
+          {{ range (where .Site.Pages "Params.type" "top") }}
+          <a class="level-item" href="{{ .Permalink }}">
+            <h2 class="is-4">{{ .Title }}</h2>
           </a>
-          <a class="level-item" href="/faq">
-            <h2 class="is-4">FAQ</h2>
-          </a>
+          {{ end }}
         </nav>
       </div>
     </nav>

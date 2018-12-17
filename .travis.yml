@@ -9,7 +9,7 @@ cache:
 install:
   - uname -a
   - cd $TRAVIS_BUILD_DIR
-  - if [ ! -d "$GOPATH/bin/hugo" ]; then
+  - if [ ! -f "$GOPATH/bin/hugo" ]; then
       curl -L -O $HUGO_URL;
       tar xzf $ARCHIVE;
       chmod +x hugo;
