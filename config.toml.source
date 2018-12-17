@@ -25,15 +25,15 @@ url = "https://facebook.com/icalFikr"
 fa_icon = "fa-facebook"
 
 [[params.social]]
-url = "https://t.me/icalFikr"
+url = "https://t.me/koneko096"
 fa_icon = "fa-telegram"
 
 [[params.social]]
-url = "https://github.com/icalF"
+url = "https://github.com/koneko096"
 fa_icon = "fa-github"
 
 [[params.social]]
-url = "https://twitter.com/ical_fikr"
+url = "https://twitter.com/koneko096"
 fa_icon = "fa-twitter"
 
 [[params.social]]
