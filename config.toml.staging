@@ -11,3 +11,4 @@ Paginate = 8
 
 [permalinks]
   report = "/report/:year/:month/:day/:title"
+  top = "/:filename"

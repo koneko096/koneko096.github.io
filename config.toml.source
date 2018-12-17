@@ -15,6 +15,7 @@ googleAnalytics = "UA-111769411-1"
 
 [permalinks]
   report = "/report/:year/:month/:day/:title"
+  top = "/:filename"
   
 [params.highlight]
 style = "github"
