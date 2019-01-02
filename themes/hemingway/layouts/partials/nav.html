@@ -6,11 +6,9 @@
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
-          {{ range .Site.Params.social }}
-          <a class="level-item" href="{{ .url }}">
-            <span class="icon">
-              <i class="fa {{ .fa_icon }}"></i>
-            </span>
+          {{ range (where .Site.Pages "Params.type" "top") }}
+          <a class="level-item" href="{{ .Permalink }}">
+            <h2 class="is-4">{{ .Title }}</h2>
           </a>
           {{ end }}
         </nav>

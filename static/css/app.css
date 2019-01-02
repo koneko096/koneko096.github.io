@@ -34,3 +34,24 @@ iframe {
   display: block;
   margin: 0 auto;
 }
+
+.nav-item .level-item {
+  margin-top: 6px;
+  margin-left: 30px;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.footer-bar {
+  margin-top: 10px;
+}
+
+.footer-bar a {
+  color: #42464c;
+}
+
+.content ul p:not(:last-child) {
+  margin-bottom: 0px;
+}

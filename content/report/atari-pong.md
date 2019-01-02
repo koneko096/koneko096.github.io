@@ -3,6 +3,7 @@ categories = ["artificial intelligence", "machine learning", "experiment", "deep
 tags = []
 date = "2018-01-12"
 title = "Deep Reinforcement Learning Note 1 - Playing Pong with Policy Gradient"
+type = "article"
 +++
 
 This is my first post in this year and also my first post about machine learning. Formerly, I think I am gonna make this blog only for low-level and security playground only --that's why the name is postmortem. But, as you know life is dynamic! That's makes it interesting :smiley:

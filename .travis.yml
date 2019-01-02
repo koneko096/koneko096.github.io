@@ -4,17 +4,17 @@ go:
 
 cache:
   directories:
-    - $GOPATH/src
-    - $GOPATH/pkg
     - $GOPATH/bin
 
 install:
   - uname -a
   - cd $TRAVIS_BUILD_DIR
-  - curl -L -O $HUGO_URL
-  - tar xzf $ARCHIVE
-  - chmod +x hugo
-  - mv hugo $GOPATH/bin
+  - if [ ! -f "$GOPATH/bin/hugo" ]; then
+      curl -L -O $HUGO_URL;
+      tar xzf $ARCHIVE;
+      chmod +x hugo;
+      mv hugo $GOPATH/bin;
+    fi
   - hugo version
   - npm version
   - npm install

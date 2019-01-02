@@ -3,11 +3,12 @@ categories = ["security", "bug", "development", "testing"]
 tags = ["security", "bug", "development", "testing", ""]
 date = "2017-10-17"
 title = "Exploding Image"
+type = "article"
 +++
 
 On my last summer intern, I was assigned to a bug fixing job. It seems not a big deal at first. Only fixing timeout while uploading image. But, when I try to add timeout to 1 min, still got a timeout. Up to 5 min, didn't fix yet. Even, for 30 min timeout, no improvement. Then, I asked ops team to check the debug log. And, kaboom!! We got a sawtooth memory pattern and some RuntimeErrorException leftover.
 
-{{< figure src="https://plumbr.eu/wp-content/uploads/2016/02/java-memory-usage-example.png" title="Sawtooth footprint" >}}
+{{< figure src="https://plumbr.io/app/uploads/2016/02/java-memory-usage-example.png" title="Sawtooth footprint" >}}
 
 Surely, there is something wrong. I tried to figure out how image preprocess work. We used [imgscalr](https://github.com/rkalla/imgscalr) back then. Their site claimed that it is (up until this post made) the fastest Java image scaling library ever. I ran a few test against [large](https://i.pinimg.com/originals/ed/9f/8a/ed9f8acd065cf7d19584f0984648e31f.jpg) [images](https://farm4.staticflickr.com/3182/2893346171_11a4df8533_o.jpg), and even a [corrupted image](http://media.rhizome.org/blog/3942/14.jpg). And then, I realized something bad. **The only pre-preprocessing job we done was checking image size.** If size of the image didn't exceess few MB, then crop, rescale. But, what if some huge images with only monotonic colors appear like this?
 
