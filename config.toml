@@ -3,20 +3,16 @@ languageCode = "en-us"
 title = "Postmortem"
 enableEmoji = true
 copyright = "&copy; <a href=\"https://github.com/koneko096\">Afrizal Fikri</a> 2019"
-newContentEditor = "vim"
 hasCJKLanguage = true
 theme = "hemingway"
 pygmentsStyle = "native"
-draft = false
-Paginate = 8
-
-disqusShortname = "postmortem-1"
-googleAnalytics = "UA-111769411-1"
+draft = true
+Paginate = 4
 
 [permalinks]
   report = "/report/:year/:month/:day/:title"
   top = "/:filename"
-  
+
 [params.highlight]
 style = "github"
 languages = ["python", "go", "java", "javascript", "bash", "elixir"]
