@@ -3,7 +3,7 @@ categories = ["security", "bug", "development", "testing"]
 tags = ["security", "bug", "development", "testing", ""]
 date = "2017-10-17"
 title = "Exploding Image"
-type = "article"
+type = "posts"
 +++
 
 On my last summer intern, I was assigned to a bug fixing job. It seems not a big deal at first. Only fixing timeout while uploading image. But, when I try to add timeout to 1 min, still got a timeout. Up to 5 min, didn't fix yet. Even, for 30 min timeout, no improvement. Then, I asked ops team to check the debug log. And, kaboom!! We got a sawtooth memory pattern and some RuntimeErrorException leftover.

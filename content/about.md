@@ -1,6 +1,8 @@
 +++
 title = "About"
 type = "top"
+# menu = "main"
+# meta = "false"
 +++
 
 > Curious boy who wonders about how universe works. 

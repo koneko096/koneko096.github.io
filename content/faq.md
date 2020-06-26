@@ -1,6 +1,8 @@
 +++
 title = "FAQ"
 type = "top"
+menu = "main"
+meta = "false"
 +++
 
 - **What is the answer of life, universe, and everythings?**

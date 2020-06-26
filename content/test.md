@@ -3,7 +3,7 @@ categories = ["software development"]
 tags = ["tdd", "automation", "bug", "clean code"]
 date = "2019-02-27"
 title = "Should We Write Tests?"
-type = "article"
+type = "posts"
 +++
 
 One day, my friend wrote this in his timeline

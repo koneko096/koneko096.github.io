@@ -1,14 +1,27 @@
 baseurl = "https://koneko096.github.io/staging"
-languageCode = "en-us"
 title = "Postmortem"
-enableEmoji = true
-copyright = "&copy; <a href=\"https://github.com/koneko096\">Afrizal Fikri</a> 2020"
-hasCJKLanguage = true
-theme = "hemingway"
-pygmentsStyle = "native"
-draft = true
-Paginate = 8
+copyright = "Copyright &copy; 2020 - Afrizal Fikri"
+canonifyurls = true
+theme = "hugo-kiera"
+languageCode = "en-us"
 
-[permalinks]
-  report = "/report/:year/:month/:day/:title"
-  top = "/:filename"
+enableEmoji = true
+summaryLength = 30
+hasCJKLanguage = true
+pygmentsCodeFences = true
+draft = true
+paginate = 4
+
+[author]
+  name = "koneko096"
+  github = "koneko096"
+  gitlab = "icalF"
+  linkedin = "afrizalf"
+  facebook = "icalFikr"
+  twitter = "koneko096"
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories"
+  weight = 1

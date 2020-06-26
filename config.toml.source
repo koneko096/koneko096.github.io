@@ -1,42 +1,29 @@
 baseurl = "https://koneko096.github.io"
-languageCode = "en-us"
 title = "Postmortem"
+copyright = "Copyright &copy; 2020 - Afrizal Fikri"
+canonifyurls = true
+theme = "hugo-kiera"
+languageCode = "en-us"
+
 enableEmoji = true
-copyright = "&copy; <a href=\"https://github.com/koneko096\">Afrizal Fikri</a> 2020"
-newContentEditor = "vim"
+summaryLength = 30
 hasCJKLanguage = true
-theme = "hemingway"
-pygmentsStyle = "native"
-draft = false
-Paginate = 8
+pygmentsCodeFences = true
+paginate = 4
 
 disqusShortname = "postmortem-1"
 googleAnalytics = "UA-111769411-1"
 
-[permalinks]
-  report = "/report/:year/:month/:day/:title"
-  top = "/:filename"
-  
-[params.highlight]
-style = "github"
-languages = ["python", "go", "java", "javascript", "bash", "elixir"]
+[author]
+  name = "koneko096"
+  github = "koneko096"
+  gitlab = "icalF"
+  linkedin = "afrizalf"
+  facebook = "icalFikr"
+  twitter = "koneko096"
 
-[[params.social]]
-url = "https://facebook.com/icalFikr"
-fa_icon = "fa-facebook"
-
-[[params.social]]
-url = "https://t.me/koneko096"
-fa_icon = "fa-telegram"
-
-[[params.social]]
-url = "https://github.com/koneko096"
-fa_icon = "fa-github"
-
-[[params.social]]
-url = "https://twitter.com/koneko096"
-fa_icon = "fa-twitter"
-
-[[params.social]]
-url = "/index.xml"
-fa_icon = "fa-rss"
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories"
+  weight = 1

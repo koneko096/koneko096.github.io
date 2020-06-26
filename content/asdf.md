@@ -3,7 +3,7 @@ categories = ["programming", "software development"]
 tags = ["version manager", "automation", "devops"]
 date = "2018-03-23"
 title = "asdf -- Simple and Customizable One-for-all Version Manager"
-type = "article"
+type = "posts"
 +++
 
 Lately, I've been experimenting with Elixir to create simple functional microservices. Beside the language itself, the one thing need to explore are environment tools, like version and package manager. In Elixir, at least there are 2 env managers; [kiex](https://github.com/taylor/kiex) and [exenv](https://github.com/mururu/exenv). Also, in my box already installed [nvm](https://github.com/creationix/nvm), [rbenv](https://github.com/rbenv/rbenv), and soon [gvm](https://github.com/moovweb/gvm). Managing all these tools can be so excruciating. So I will introduce our hero here, [asdf](http://github.com/asdf-vm/asdf)!

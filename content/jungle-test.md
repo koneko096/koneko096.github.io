@@ -3,7 +3,7 @@ categories = ["software architecture", "testing"]
 tags = ["testing", "", "clean architecture", "oop"]
 date = "2019-01-10"
 title = "Testing Entire Jungle"
-type = "article"
+type = "posts"
 +++
 
 > You wanted a banana but what you got was a gorilla holding the banana and the entire jungle
