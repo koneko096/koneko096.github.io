@@ -19,14 +19,25 @@ jobs:
       steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.85.0'
           extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
+
       - name: Enable Configuration
         run: cp config.toml.${{ steps.extract_branch.outputs.branch }} config.toml
+
+      - name: Build Page
+        run: npm run build
