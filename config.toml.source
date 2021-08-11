@@ -1,6 +1,6 @@
 baseurl = "https://koneko096.github.io"
 title = "Postmortem"
-copyright = "Copyright &copy; 2020 - Afrizal Fikri"
+copyright = "Copyright &copy; 2021 - Afrizal Fikri"
 canonifyurls = true
 theme = "hugo-kiera"
 languageCode = "en-us"
