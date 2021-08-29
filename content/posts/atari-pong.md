@@ -12,7 +12,7 @@ This is my first post in this year and also my first post about machine learning
 
 It's been over a year since AlphaGo wins its match versus Lee Sedol with great victory. And not so long ago, AlphaGo Zero --self taught version of AlphaGo-- has been [published](https://deepmind.com/blog/alphago-zero-learning-scratch/). One of the core component of AlphaGo is DQN --deep Q-network which had successfully completed a diverse of [classic Atari games](https://deepmind.com/research/dqn/).
 
-{{< figure src="https://boygeniusreport.files.wordpress.com/2016/03/google-alphago-go-win.jpg" title="Lee Sedol during the match" >}}
+{{< figure src="https://web.archive.org/web/20200618130300if_/https://boygeniusreport.files.wordpress.com/2016/03/google-alphago-go-win.jpg?quality=70&strip=all&w=782" title="Lee Sedol during the match" >}}
 
 Following the success of DQN, deep reinforcement learning (RL) at general has gained much popularity. The recent breakthroughs from OpenAI been released (like [this](http://www.gamersgreed.com/openai-uses-gta-v-to-train-ai-for-driving/) and [this](https://blog.openai.com/more-on-dota-2/)), has proved further capabilities of deep RL. In this post, I'm going to tell my story about building a simple deep RL agent to play Atari Pong.
 
@@ -54,7 +54,7 @@ Weights updating will be performed by applying gradient descent with the batch s
 
 # Remarks
 
-We should be ready to the training now! Now, install `numpy` and `gym`. And then, you can copy from my implementation [here](https://gist.github.com/icalF/f108075b061dcbcc928cf9cace54d612) or [Karpathy's](https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5) (with different neural anatomy). What you should do is just make some coffee and wait about a day. Your model should be ready to test then.
+We should be ready to the training now! Now, install `numpy` and `gym`. And then, you can copy from my implementation [here](https://gist.github.com/koneko096/f108075b061dcbcc928cf9cace54d612) or [Karpathy's](https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5) (with different neural anatomy). What you should do is just make some coffee and wait about a day. Your model should be ready to test then.
 
 {{< youtube dg9URIZXvuk >}}
 

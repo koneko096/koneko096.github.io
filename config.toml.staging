@@ -21,9 +21,3 @@ paginate = 4
   facebook = "icalFikr"
   twitter = "koneko096"
 
-[menu]
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories"
-    weight = 1
