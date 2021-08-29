@@ -2,7 +2,7 @@ baseurl = "https://koneko096.github.io/staging"
 title = "Postmortem"
 copyright = "Copyright &copy; 2021 - Afrizal Fikri"
 canonifyurls = true
-theme = "hugo-kiera"
+theme = "paper"
 languageCode = "en-us"
 
 enableEmoji = true
