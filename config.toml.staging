@@ -1,5 +1,6 @@
-baseurl = "https://koneko096.github.io/staging"
+baseURL = "https://koneko096.github.io/staging"
 title = "Postmortem"
+author = "Afrizal Fikri"
 copyright = "Copyright &copy; 2021 - Afrizal Fikri"
 canonifyurls = true
 theme = "paper"
@@ -12,7 +13,7 @@ pygmentsCodeFences = true
 draft = true
 paginate = 4
 
-[author]
+[params]
   name = "koneko096"
   github = "koneko096"
   gitlab = "icalF"
@@ -20,8 +21,9 @@ paginate = 4
   facebook = "icalFikr"
   twitter = "koneko096"
 
-[[menu.main]]
-  identifier = "categories"
-  name = "Categories"
-  url = "/categories"
-  weight = 1
+[menu]
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories"
+    weight = 1
