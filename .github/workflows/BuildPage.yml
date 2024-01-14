@@ -43,7 +43,9 @@ jobs:
         run: cp config.toml.${{ steps.extract_branch.outputs.branch }} config.toml
 
       - name: Build Page
-        run: npm run build
+        run: |
+          mv static/css/app.css themes/paper/assets/custom.css
+          npm run build
 
       - name: Deploy to Staging
         uses: peaceiris/actions-gh-pages@v3

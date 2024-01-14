@@ -14,6 +14,8 @@ draft = true
 paginate = 4
 
 [params]
+  env = "staging"
+
   name = "Afrizal Fikri"
   bio = "Best outcomes come from trials"
   avatar = "https://avatars.githubusercontent.com/u/9217338"
@@ -22,4 +24,4 @@ paginate = 4
   gitlab = "icalF"
   linkedin = "afrizalf"
   facebook = "icalFikr"
-
+  rss = true
