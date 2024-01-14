@@ -14,9 +14,9 @@ Even though this is the least solved problem in this round, the problem itself a
 
 Kick Start is one of Google annual coding tests beside Code Jam and Hash Code. But this contest is a bit different. The prizes for the top contestants are job opportunity at Google, not money. 
 
-Complete description can be viewed [here](https://codingcompetitions.withgoogle.com/kickstart/round/00000000008caa74/0000000000acf318). Given a N x M terrain with obstacles, each cell consists of 2x2 minicells. You start from top left corner (1,1). You have to find a way to visit each minicell *exactly once* and come back to initial corner, if any. You can only move into four true neighbors (no diagonal move).
+Complete description can be viewed [here](https://github.com/google/coding-competitions-archive/blob/main/kickstart/2022/round_b/hamiltonian_tour/statement.pdf). Given a N x M terrain with obstacles, each cell consists of 2x2 minicells. You start from top left corner (1,1). You have to find a way to visit each minicell *exactly once* and come back to initial corner, if any. You can only move into four true neighbors (no diagonal move).
 
-{{< figure src="https://codejam.googleapis.com/dashboard/get_file/AQj_6U32_0J5YBAoNnQ3fGCopyxBqak78IdIxW1-INgCDqKp65LFlrrPgjKzBFwegZ6aVOcOwnqLdOM/case2.png" >}}
+{{< figure src="/img/hamilton.png" >}}
 
 Google has released the official analysis. But I found it too difficult to understand. So, here I try to simplifying things for you guys with more intuitive way.
 
