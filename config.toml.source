@@ -1,7 +1,7 @@
 baseURL = "https://koneko096.github.io"
 title = "Postmortem"
 author = "Afrizal Fikri"
-copyright = "Copyright &copy; 2022 - Afrizal Fikri"
+copyright = "Copyright &copy; 2024 - Afrizal Fikri"
 canonifyurls = true
 theme = "paper"
 languageCode = "en-us"
@@ -16,9 +16,11 @@ disqusShortname = "postmortem-1"
 googleAnalytics = "UA-111769411-1"
 
 [params]
-  name = "koneko096"
+  name = "Afrizal Fikri"
+  bio = "Best outcomes come from trials"
+  avatar = "https://avatars.githubusercontent.com/u/9217338"
+
   github = "koneko096"
   gitlab = "icalF"
   linkedin = "afrizalf"
   facebook = "icalFikr"
-  twitter = "koneko096"
