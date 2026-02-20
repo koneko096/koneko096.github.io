@@ -2,12 +2,9 @@
 
 name: Build and push
 
-# Controls when the action will run.
 on:
-  # Triggers the workflow on push and pull request events
   push:
- 
-  # Allows you to run this workflow manually from the Actions tab
+    branches: ["source", "staging"]
   workflow_dispatch:
 
 
@@ -17,7 +14,7 @@ jobs:
 
       steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -28,10 +25,10 @@ jobs:
           extended: true
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
-      - run: npm install
+          node-version: 24
+      - run: npm ci
 
       - name: Extract branch name
         shell: bash
@@ -47,7 +44,7 @@ jobs:
           npm run build
 
       - name: Deploy to Staging
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/staging' }}
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
@@ -55,7 +52,7 @@ jobs:
           publish_branch: master
 
       - name: Deploy to Live
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/source' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
