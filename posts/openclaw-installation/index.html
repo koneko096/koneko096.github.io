@@ -1,0 +1,580 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Finishing Project By Themselves - Postmortem</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Hey there, fellow tech enthusiast! Ever wished you had an AI assistant to help you conquer your projects? Well, you&rsquo;re in luck! This guide is all about getting OpenClaw, a super powerful AI companion, up and running right on your own computer." />
+  <meta name="author" content="Afrizal Fikri" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://koneko096.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://koneko096.github.io/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/9217338" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://koneko096.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://koneko096.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://koneko096.github.io/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://koneko096.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://koneko096.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://koneko096.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.121.2">
+
+  
+  
+  
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-111769411-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+  <meta itemprop="name" content="Finishing Project By Themselves">
+<meta itemprop="description" content="Hey there, fellow tech enthusiast! Ever wished you had an AI assistant to help you conquer your projects? Well, you&rsquo;re in luck! This guide is all about getting OpenClaw, a super powerful AI companion, up and running right on your own computer."><meta itemprop="datePublished" content="2026-02-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-02-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1565">
+<meta itemprop="keywords" content="agentic,ai,llm,automation," />
+  
+  <meta property="og:title" content="Finishing Project By Themselves" />
+<meta property="og:description" content="Hey there, fellow tech enthusiast! Ever wished you had an AI assistant to help you conquer your projects? Well, you&rsquo;re in luck! This guide is all about getting OpenClaw, a super powerful AI companion, up and running right on your own computer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://koneko096.github.io/posts/openclaw-installation/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-02-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-02-20T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Finishing Project By Themselves"/>
+<meta name="twitter:description" content="Hey there, fellow tech enthusiast! Ever wished you had an AI assistant to help you conquer your projects? Well, you&rsquo;re in luck! This guide is all about getting OpenClaw, a super powerful AI companion, up and running right on your own computer."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://koneko096.github.io/posts/openclaw-installation/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://koneko096.github.io"
+      >Postmortem</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://koneko096.github.io/posts/faq/"
+        >FAQ</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/koneko096"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/afrizalf"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://koneko096.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Finishing Project By Themselves</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 20, 2026</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>Hey there, fellow tech enthusiast! Ever wished you had an AI assistant to help you conquer your projects? Well, you&rsquo;re in luck! This guide is all about getting OpenClaw, a super powerful AI companion, up and running right on your own computer. We&rsquo;ll also hook it up with Telegram for easy chats and DuckDuckGo for all your web-searching needs. Let&rsquo;s get started!</p>
+<h2 id="getting-ready-what-youll-need">Getting Ready: What You&rsquo;ll Need</h2>
+<p>Before we dive into the fun stuff, just make sure you have one essential tool installed on your system:</p>
+<ul>
+<li><strong>Node.js (LTS version recommended):</strong> Think of Node.js as the engine that powers OpenClaw. It&rsquo;s super important for everything to run smoothly.</li>
+</ul>
+<h2 id="local-installation-of-openclaw">Local Installation of OpenClaw</h2>
+<p>The quickest and most recommended way to get OpenClaw up and running is by using its dedicated installer script. This script handles Node.js detection, installation, and initial onboarding in one streamlined process.</p>
+<ol>
+<li>
+<p><strong>Let&rsquo;s Install OpenClaw!</strong>
+Pop open your terminal or command prompt and paste in the command that&rsquo;s right for your computer:</p>
+<ul>
+<li><strong>For macOS/Linux folks:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://openclaw.ai/install.sh | bash
+</span></span></code></pre></div></li>
+<li><strong>For Windows users (PowerShell is your friend here!):</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>irm https<span style="color:#960050;background-color:#1e0010">:</span>//openclaw.ai/install.ps1 | iex
+</span></span></code></pre></div></li>
+</ul>
+<p>This handy script will get the OpenClaw CLI tools installed globally across your system.</p>
+</li>
+<li>
+<p><strong>Meet the Onboarding Wizard!</strong>
+Once the installation script finishes its magic, it&rsquo;s time to run the onboarding wizard. This friendly guide will help you set up your authentication, gateway settings, and even connect to different chat channels!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw onboard --install-daemon
+</span></span></code></pre></div><p>Just follow its lead, and you&rsquo;ll be good to go!</p>
+</li>
+<li>
+<p><strong>A Quick Health Check for Your Gateway:</strong>
+Want to make sure OpenClaw&rsquo;s heart (the Gateway service) is beating strong? Just type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw gateway status
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Say Hello to the Control UI!</strong>
+If you&rsquo;re eager to see OpenClaw&rsquo;s web interface, your Control UI awaits!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw dashboard
+</span></span></code></pre></div><p>This opens up a browser window where you can manage and interact with your assistant!</p>
+</li>
+</ol>
+<h2 id="connecting-openclaw-to-telegram-your-ais-chatroom">Connecting OpenClaw to Telegram (Your AI&rsquo;s Chatroom!)</h2>
+<p>Let&rsquo;s get OpenClaw chatting on Telegram! You&rsquo;ll need to do a little setup in your <code>config.yaml</code> file to get your AI assistant talking to your Telegram buddies.</p>
+<ol>
+<li>
+<p><strong>Create Your Telegram Bot (It&rsquo;s Easier Than You Think!):</strong></p>
+<ul>
+<li>First, find the legendary BotFather on Telegram (@BotFather) and start a chat.</li>
+<li>Send him <code>/newbot</code> and follow his simple instructions to create your very own bot.</li>
+<li>BotFather will give you a special API Token. This is your bot&rsquo;s identity, so guard it carefully! Never ever share it publicly!</li>
+</ul>
+</li>
+<li>
+<p><strong>Tweak Your <code>config.yaml</code> for Telegram Awesomeness:</strong>
+Open up your <code>config.yaml</code> file (you&rsquo;ll usually find it in your OpenClaw home directory, like <code>~/.openclaw/config.yaml</code>). Look for the <code>channels</code> section and add (or adjust) these Telegram details to get everything working perfectly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">channels</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">telegram</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">token</span>: <span style="color:#e6db74">&#34;YOUR_TELEGRAM_BOT_TOKEN&#34;</span> <span style="color:#75715e"># Pop your super secret Bot API Token in here!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">dmPolicy</span>: <span style="color:#e6db74">&#34;allowlist&#34;</span>            <span style="color:#75715e"># We recommend &#34;allowlist&#34; so only folks you approve can DM your bot!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">allowFrom</span>:                     <span style="color:#75715e"># This is a list of actual Telegram User IDs you want to allow to chat</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;YOUR_TELEGRAM_USER_ID&#34;</span>      <span style="color:#75715e"># Replace this with your own Telegram user ID!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Got a group chat you want your AI in? Here&#39;s how you might set that up:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># groupPolicy: &#34;allowlist&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># groups:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#   &#34;-1001234567890&#34;: # Example: A group chat ID (they usually start with -100!)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#     groupPolicy: &#34;open&#34; # You can make it &#34;open&#34; for anyone in the group, or &#34;allowlist&#34; for specific people</span>
+</span></span></code></pre></div><ul>
+<li><strong>Where&rsquo;s My Telegram User ID?</strong> The safest way to find yours is to DM your brand new bot, then in your terminal, run <code>openclaw logs --follow</code> and peek for the <code>from.id</code> in the message logs. Or, a quick and easy way is to ask <code>@userinfobot</code> on Telegram!</li>
+<li>Remember to replace <code>&quot;YOUR_TELEGRAM_BOT_TOKEN&quot;</code> and <code>&quot;YOUR_TELEGRAM_USER_ID&quot;</code> with your actual, real values!</li>
+</ul>
+</li>
+<li>
+<p><strong>Give OpenClaw a Quick Reboot!</strong>
+Anytime you change your <code>config.yaml</code>, OpenClaw needs a little reboot to soak in those new settings. If you&rsquo;re running it with <code>openclaw start</code>, just stop it and start it up again. If you&rsquo;re using something like <code>pm2</code> for continuous running, use its restart command.</p>
+</li>
+</ol>
+<h2 id="supercharging-openclaw-with-duckduckgo-search">Supercharging OpenClaw with DuckDuckGo Search</h2>
+<p>Want your OpenClaw to be a web-searching ninja? Good news! It comes with a built-in <code>ddg-search</code> skill that&rsquo;s ready to go with almost no setup required.</p>
+<ol>
+<li>
+<p><strong>Is <code>ddg-search</code> Ready? (Probably!):</strong>
+OpenClaw keeps its awesome skills in your workspace (usually <code>~/.openclaw/workspace/skills</code>). The <code>ddg-search</code> skill should already be chilling out there. If you&rsquo;re curious, you can always check your active skills by typing <code>openclaw skills list</code>.</p>
+</li>
+<li>
+<p><strong>No API Keys? No Problem!</strong>
+One of the coolest things about the <code>ddg-search</code> skill is that it doesn&rsquo;t need any annoying API keys or extra tweaks in your <code>config.yaml</code>. OpenClaw is smart enough to just use it automatically whenever you ask it to search the web.</p>
+</li>
+<li>
+<p><strong>Start Searching!</strong>
+Once it&rsquo;s all set, just ask OpenClaw to find things for you! For example: &ldquo;Search for the latest trends in generative AI.&rdquo;</p>
+</li>
+</ol>
+<p>This whole setup will give you a super-powered, local AI assistant that can chat on Telegram and explore the web with DuckDuckGo. It&rsquo;s the perfect foundation for all sorts of amazing AI adventures!</p>
+<h2 id="installing-and-setting-up-your-gemini-cli-your-gateway-to-googles-ai">Installing and Setting Up Your Gemini CLI (Your Gateway to Google&rsquo;s AI!)</h2>
+<p>The Gemini Command Line Interface (CLI) is like your personal remote control for talking to Google&rsquo;s awesome Gemini AI models right from your terminal. It&rsquo;s a fantastic way to bring some serious AI power into your projects!</p>
+<h3 id="installation-made-easy">Installation Made Easy</h3>
+<p>Getting the Gemini CLI on your system is a breeze, especially with <code>npm</code> (Node Package Manager). Just open your terminal and type this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g @google/gemini-cli
+</span></span></code></pre></div><p><em>Quick note: Depending on your system setup, you might need a little extra permission for this command. On macOS/Linux, that&rsquo;s often <code>sudo</code>; on Windows, you might need an elevated PowerShell or Command Prompt.</em></p>
+<h3 id="getting-authenticated-and-ready-to-go">Getting Authenticated and Ready to Go!</h3>
+<p>To unleash the full potential of the Gemini CLI, you&rsquo;ll need to link it up with your Google account and grab an API key.</p>
+<ol>
+<li>
+<p><strong>Grab Your Gemini API Key:</strong></p>
+<ul>
+<li>Head over to <a href="https://aistudio.google.com/">Google AI Studio</a>.</li>
+<li>Once there, generate a brand new API key. This key is your secret handshake with Google&rsquo;s AI, so guard it carefully! Never ever share it publicly!</li>
+</ul>
+</li>
+<li>
+<p><strong>Tell Gemini CLI Your Secret Key:</strong>
+There are a couple of cool ways to let the Gemini CLI know about your API key:</p>
+<ul>
+<li>
+<p><strong>The Recommended Way (Persistent Configuration):</strong> This method saves your key so you don&rsquo;t have to enter it every time. Just use this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gemini config set api-key YOUR_GEMINI_API_KEY
+</span></span></code></pre></div><p>Remember to swap <code>&quot;YOUR_GEMINI_API_KEY&quot;</code> with the actual key you got from Google AI Studio.</p>
+</li>
+<li>
+<p><strong>For Quick Tasks (Environment Variable):</strong> If you&rsquo;re just doing something quick or working on a script, an environment variable can be handy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YOUR_GEMINI_API_KEY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># On Windows Command Prompt: set GOOGLE_API_KEY=&#34;YOUR_GEMINI_API_KEY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># On Windows PowerShell: $env:GOOGLE_API_KEY=&#34;YOUR_GEMINI_API_KEY&#34;</span>
+</span></span></code></pre></div><p>Just a heads-up: environment variables usually stick around only for your current terminal session. If you want it to be permanent, you&rsquo;ll need to add it to your shell&rsquo;s profile file (like <code>.bashrc</code> or <code>.zshrc</code>) or set it in your system&rsquo;s environment variables on Windows.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Time to Verify (Optional but Recommended!):</strong>
+Want to make sure everything&rsquo;s set up perfectly? Run this simple command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gemini models list
+</span></span></code></pre></div><p>If you see a list of awesome Gemini models, then congratulations – you&rsquo;re all set!</p>
+</li>
+</ol>
+<p>With the Gemini CLI all installed and ready, you&rsquo;ve got a powerful new tool to play with, opening up a world of AI possibilities!</p>
+<h2 id="integrating-gemini-models-with-openclaw-bringing-googles-brainpower-to-your-assistant">Integrating Gemini Models with OpenClaw (Bringing Google&rsquo;s Brainpower to Your Assistant!)</h2>
+<p>Ready to let OpenClaw tap into Google&rsquo;s incredible Gemini models? This part of the setup enables your AI assistant to use Gemini for all its smart tasks.</p>
+<p><strong>Just a heads-up:</strong> Make sure you&rsquo;ve got the Gemini CLI installed and configured first, as this awesome integration relies on it working behind the scenes.</p>
+<ol>
+<li>
+<p><strong>Turn On the Gemini Plugin:</strong>
+OpenClaw uses a special plugin to make friends with Gemini models. Let&rsquo;s enable it with this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw plugins enable google-gemini-cli-auth
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Log In and Make Gemini Your Go-To!</strong>
+After enabling the plugin, you&rsquo;ll want to log in with your Google account. This clever step handles all the authentication magic (OAuth tokens) and you can even set Gemini as your preferred model provider right away:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw models auth login --provider google-gemini-cli --set-default
+</span></span></code></pre></div><p>Just follow the easy on-screen steps to complete your Google authentication. Your precious OAuth tokens will be stored safely within your OpenClaw gateway.</p>
+</li>
+</ol>
+<p>Once you&rsquo;ve got this configured, your OpenClaw assistant will be ready to dive into tasks using the powerful Gemini models, making your local AI setup even more incredible!</p>
+<h2 id="utilizing-your-ai-assistant-to-finish-projects-let-your-bot-do-the-heavy-lifting">Utilizing Your AI Assistant to Finish Projects (Let Your Bot Do the Heavy Lifting!)</h2>
+<p>Now that your OpenClaw assistant is fully powered up with Telegram, DuckDuckGo, and Gemini, it&rsquo;s time to unleash its potential and tackle those projects! Think of your bot as your super-efficient co-pilot, ready to assist with a wide range of tasks. In this examples, I&rsquo;m using an (almost) abandoned side project &ndash; a simple <a href="https://github.com/koneko096/hachip">emulator</a>.</p>
+<ol>
+<li>First, I explore the solution alternatives using DuckDuckGo! search.</li>
+</ol>
+<figure><img src="https://koneko096.github.io/img/llm-exploration.png"/>
+</figure>
+
+<ol start="2">
+<li>Next, I&rsquo;m starting with restructuring the codebases to accept web assembly target.</li>
+</ol>
+<figure><img src="https://koneko096.github.io/img/llm-refactor.png"/>
+</figure>
+
+<ol start="3">
+<li>
+<p>(Not so) Lastly, implement the web render page.</p>
+</li>
+<li>
+<p>Debug and optimize whenever necessary!</p>
+</li>
+</ol>
+<figure><img src="https://koneko096.github.io/img/llm-debug.png"/>
+</figure>
+
+<h3 id="empowering-your-workflow">Empowering Your Workflow</h3>
+<p>By combining OpenClaw&rsquo;s intelligent automation with powerful language models like Gemini, seamless communication through Telegram, and efficient web search, you&rsquo;ve created a truly personalized and capable AI assistant. This setup empowers you to offload repetitive tasks, accelerate research, and boost your creative process, ultimately helping you finish your projects more efficiently and effectively. Happy building!</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://koneko096.github.io/tags/agentic"
+      >agentic</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://koneko096.github.io/tags/ai"
+      >ai</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://koneko096.github.io/tags/llm"
+      >llm</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://koneko096.github.io/tags/automation"
+      >automation</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://koneko096.github.io/posts/kickstart-2022/"
+      ><span>Kick Start 2022 Round B: Hamiltonian Tour Solution</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+  <div class="mt-24" id="disqus_thread"></div>
+  <script>
+    const disqusShortname = 'postmortem-1';
+    const script = document.createElement('script');
+    script.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+    script.setAttribute('data-timestamp', +new Date());
+    document.head.appendChild(script);
+  </script>
+  
+
+  
+  
+
+  
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2026
+    <a class="link" href="https://koneko096.github.io">Postmortem</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
