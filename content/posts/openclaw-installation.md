@@ -1,6 +1,6 @@
 +++
-Categories = ["AI", "OpenClaw", "Tutorial"]
-Tags = ["OpenClaw", "AI Assistant", "Installation", "Telegram", "DDG"]
+Categories = ["ai"]
+Tags = ["agentic", "ai", "llm", "automation"]
 date = "2026-02-20"
 title = "Finishing Project By Themselves"
 type = "posts"
@@ -168,63 +168,22 @@ Once you've got this configured, your OpenClaw assistant will be ready to dive i
 
 ## Utilizing Your AI Assistant to Finish Projects (Let Your Bot Do the Heavy Lifting!)
 
-Now that your OpenClaw assistant is fully powered up with Telegram, DuckDuckGo, and Gemini, it's time to unleash its potential and tackle those projects! Think of your bot as your super-efficient co-pilot, ready to assist with a wide range of tasks.
+Now that your OpenClaw assistant is fully powered up with Telegram, DuckDuckGo, and Gemini, it's time to unleash its potential and tackle those projects! Think of your bot as your super-efficient co-pilot, ready to assist with a wide range of tasks. In this examples, I'm using an (almost) abandoned side project -- a simple [emulator](https://github.com/koneko096/hachip).
 
-### 1. Your Personal Research Guru (Powered by DuckDuckGo!)
+1. First, I explore the solution alternatives using DuckDuckGo! search.
 
-Stuck on a tricky research topic? Need quick facts or the latest trends? Just ask your OpenClaw assistant to search the web, and it will leverage its `ddg-search` skill to find what you need.
+{{< figure src="/img/llm-exploration.png" >}}
 
-*   **Example Command:**
-    ```
-    Search DuckDuckGo for "best practices for secure coding in Node.js"
-    ```
-    Your bot will scour the web and bring back relevant snippets and links, saving you valuable time.
+2. Next, I'm starting with restructuring the codebases to accept web assembly target.
 
-### 2. Brainstorming and Content Generation (Thanks, Gemini!)
+{{< figure src="/img/llm-refactor.png" >}}
 
-Whether you're brainstorming ideas, drafting outlines, or even generating creative content, your integrated Gemini models are ready to help. OpenClaw can tap into Gemini's advanced language capabilities to assist you.
+3. (Not so) Lastly, implement the web render page.
 
-*   **Example Command (via Telegram or OpenClaw CLI):**
-    ```
-    Generate 5 catchy headlines for a blog post about AI productivity tools.
-    ```
-    or
-    ```
-    Draft a short paragraph explaining the benefits of cloud-native architecture.
-    ```
-    Your bot will respond with intelligent and creative suggestions, giving you a head start on your writing or idea generation.
+4. Debug and optimize whenever necessary!
 
-### 3. Coding Sidekick (Gemini to the Rescue!)
+{{< figure src="/img/llm-debug.png" >}}
 
-Tackling complex code, refactoring a project like `hachip`, or just stuck on a tricky error? Your Gemini-powered OpenClaw can be an invaluable coding assistant. It can help you write, refine, or understand code, accelerating your development process.
-
-*   **Example Command (Debugging/Refactoring):**
-    ```
-    Explain the concept of decoupling UI from core logic in a CHIP-8 emulator, similar to how `hachip` was refactored for WebAssembly.
-    ```
-    or
-    ```
-    Suggest best practices for handling display updates efficiently in a PPU (Picture Processing Unit) like in the `hachip` project, minimizing UI redraws.
-    ```
-*   **Example Command (Code Generation/Explanation):**
-    ```
-    Write a Rust trait for `Display` that exposes a `get_display_memory()` method for a PPU, returning a slice of its pixel buffer.
-    ```
-    Your bot can provide insightful explanations, code examples tailored to your needs, and even suggest improvements, making your development process smoother and more informed.
-
-### 4. Task Management and Reminders (Stay Organized!)
-
-While OpenClaw isn't a full-fledged project manager, you can integrate it with simple reminder or notification systems, or even use its general capabilities to help you organize thoughts and tasks.
-
-*   **Example Command:**
-    ```
-    Remind me in 30 minutes to review the project's GitHub pull requests.
-    ```
-    or
-    ```
-    Summarize the key action items from our last team meeting.
-    ```
-    OpenClaw can help you stay on track and keep important information at your fingertips.
 
 ### Empowering Your Workflow
 

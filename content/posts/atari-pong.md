@@ -1,6 +1,6 @@
 +++
-categories = ["artificial intelligence", "machine learning", "experiment", "deep learning", "reinforcement learning"]
-tags = []
+categories = ["ai"]
+tags = ["machine learning", "experiment", "deep learning", "reinforcement learning"]
 date = "2018-01-12"
 title = "Deep Reinforcement Learning Note 1 - Playing Pong with Policy Gradient"
 type = "posts"
