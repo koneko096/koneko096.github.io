@@ -20,7 +20,7 @@ Before you begin, ensure you have the following installed on your system:
 The recommended and simplest way to install OpenClaw is via its global npm package. This method handles Node.js dependencies and sets up OpenClaw for immediate use without needing to clone the entire repository.
 
 1.  **Install OpenClaw Globally:**
-    Open your terminal or command prompt and execute the following command. Depending on your system, you might need administrator privileges (e.g., `sudo` on Linux/macOS, or an elevated command prompt on Windows).
+    Open your terminal or command prompt and execute the following command. Depending on your system, you might need administrator privileges (e.g., `sudo` on Linux/macOS, or an elevated command prompt (Windows).
     ```bash
     npm install -g openclaw@latest
     ```
@@ -90,27 +90,6 @@ OpenClaw can leverage DuckDuckGo for web searches through its `ddg-search` skill
 
 This comprehensive setup will provide you with a powerful, locally-hosted AI assistant capable of interacting through Telegram and performing web searches via DuckDuckGo, laying the foundation for even more advanced AI capabilities.
 
-## Integrating Gemini Models with OpenClaw
-
-To harness the power of Google's Gemini models directly within OpenClaw, you need to enable the dedicated Gemini plugin and authenticate your access. This integration allows OpenClaw to utilize Gemini for its AI-driven tasks.
-
-**Prerequisite:** Ensure you have the Gemini CLI installed as described in the "Installing and Configuring Gemini CLI" section below.
-
-1.  **Enable the Gemini Plugin:**
-    OpenClaw uses a plugin to facilitate interaction with Gemini models. Enable it using the `plugins enable` command:
-    ```bash
-    openclaw plugins enable google-gemini-cli-auth
-    ```
-
-2.  **Authenticate and Set Default Model:**
-    After enabling the plugin, you need to log in to your Google account to authenticate with Gemini. This process automatically sets up the necessary OAuth tokens. You can also set Gemini as your default model provider:
-    ```bash
-    openclaw models auth login --provider google-gemini-cli --set-default
-    ```
-    Follow the on-screen prompts to complete the Google authentication flow. This command stores the OAuth tokens securely within your OpenClaw gateway host.
-
-Once configured, OpenClaw will be able to access and utilize the Gemini models for tasks that require advanced AI capabilities, seamlessly integrating with your local assistant setup.
-
 ## Installing and Configuring Gemini CLI
 
 The Gemini Command Line Interface (CLI) allows you to interact with Google's Gemini models directly from your terminal, offering a powerful way to integrate advanced AI capabilities into your workflow.
@@ -123,7 +102,7 @@ The easiest way to install the Gemini CLI is via `npm` (Node Package Manager) gl
 npm install -g @google/gemini-cli
 ```
 
-Depending on your operating system and npm setup, you might need to run this command with `sudo` (Linux/macOS) or in an elevated command prompt (Windows).
+Depending on your operating system and npm setup, you might need to run this command with `sudo` (Linux/macOS), or in an elevated command prompt (Windows).
 
 ### Authentication and Model Setup
 
@@ -160,3 +139,24 @@ To use the Gemini CLI, you need to authenticate with your Google account and oft
     This command should list the available Gemini models if your setup is correct.
 
 With the Gemini CLI installed and configured, you can now leverage powerful AI models for various tasks directly from your command line, complementing your OpenClaw assistant capabilities.
+
+## Integrating Gemini Models with OpenClaw
+
+To harness the power of Google's Gemini models directly within OpenClaw, you need to enable the dedicated Gemini plugin and authenticate your access. This integration allows OpenClaw to utilize Gemini for its AI-driven tasks.
+
+**Prerequisite:** Ensure you have the Gemini CLI installed and configured, as this integration relies on its underlying functionality.
+
+1.  **Enable the Gemini Plugin:**
+    OpenClaw uses a plugin to facilitate interaction with Gemini models. Enable it using the `plugins enable` command:
+    ```bash
+    openclaw plugins enable google-gemini-cli-auth
+    ```
+
+2.  **Authenticate and Set Default Model:**
+    After enabling the plugin, you need to log in to your Google account to authenticate with Gemini. This process automatically sets up the necessary OAuth tokens. You can also set Gemini as your default model provider:
+    ```bash
+    openclaw models auth login --provider google-gemini-cli --set-default
+    ```
+    Follow the on-screen prompts to complete the Google authentication flow. This command stores the OAuth tokens securely within your OpenClaw gateway host.
+
+Once configured, OpenClaw will be able to access and utilize the Gemini models for various tasks directly from your command line, seamlessly integrating with your local assistant setup.
