@@ -30,7 +30,7 @@ Reinforcement learning is an exciting area of machine learning. It can be classi
 
 There are few core component of reinforment learning: **environment state**, **action**, **observation state**, **policy**, and **reward**. Agent will make action for every timestep. Every action from the agent will affect the environment. And then environment will make feedback with reward and change of environment state. Depend on the problems, environment state will be observed by agent to make update to internal state of agent --called observation state. Set of action performed as a function of state is called policy. Policy can depend on observation state or not (can be deterministic, randomized or fixed).
 
-{{< figure src="https://cdn-images-1.medium.com/max/1600/1*HvoLc50Dpq1ESKuejhICHg.png" title="RL loopback" >}}
+{{< figure src="https://cdn-images-1.medium.com/v2/resize:fit:1600/1*HvoLc50Dpq1ESKuejhICHg.png" title="RL loopback" >}}
 
 Main goal of RL is to determine the best policy in order to maximize the *expected rewards*. We can imagine a policy as a path need to be taken to reach the goal. The longer the path taken, the least score can be obtained. If we for example, take the "dangerous" path which contains trap, we get the penalty and reducing the final score too. To achieve the best policy, sometimes we need to leave the most promising policy to explore another uncertain policy. This problem known as [**exploration vs exploitation dilemma**](https://www.youtube.com/watch?v=XppywGzhaXE). 
 
@@ -62,9 +62,9 @@ After training has completed, you can run the script with turning on param `resu
 
 # References
 - Reinforcement Learning: An Introduction by Sutton
-- [CS213n Convolutional Neural Net for Visual Recognition course slide about RL](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture14.pdf)
+- [CS213n Convolutional Neural Net for Visual Recognition course slide about RL](https://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture14.pdf)
 - [Deep Reinforcement Learning Demysitifed (Episode 2) — Policy Iteration, Value Iteration and Q-learning](https://medium.com/@m.alzantot/deep-reinforcement-learning-demysitifed-episode-2-policy-iteration-value-iteration-and-q-978f9e89ddaa)
 - [Pong with Reinforcement Learning Tutorial](http://karpathy.github.io/2016/05/31/rl/)
-- [Simple RL Series with Tensorflow](https://medium.com/@awjuliani/super-simple-reinforcement-learning-tutorial-part-2-ded33892c724)
+- [Simple RL Series with Tensorflow](https://awjuliani.medium.com/super-simple-reinforcement-learning-tutorial-part-2-ded33892c724)
 - [Lecture slide from David Silver](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-7-policy-gradient-methods.pdf)
 - [Summary and additional resources about policy gradient method](https://github.com/dennybritz/reinforcement-learning/tree/master/PolicyGradient)

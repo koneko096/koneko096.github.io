@@ -116,7 +116,7 @@ npm install -g @google/gemini-cli
 To unleash the full potential of the Gemini CLI, you'll need to link it up with your Google account and grab an API key.
 
 1.  **Grab Your Gemini API Key:**
-    *   Head over to [Google AI Studio](https://aistudio.google.com/).
+    *   Head over to [Google AI Studio](https://aistudio.google.com/welcome).
     *   Once there, generate a brand new API key. This key is your secret handshake with Google's AI, so guard it carefully! Never ever share it publicly!
 
 2.  **Tell Gemini CLI Your Secret Key:**
