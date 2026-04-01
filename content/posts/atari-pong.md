@@ -10,11 +10,11 @@ This is my first post in this year and also my first post about machine learning
 
 # Prelude 
 
-It's been over a year since AlphaGo wins its match versus Lee Sedol with great victory. And not so long ago, AlphaGo Zero --self taught version of AlphaGo-- has been [published](https://deepmind.com/blog/alphago-zero-learning-scratch/). One of the core component of AlphaGo is DQN --deep Q-network which had successfully completed a diverse of [classic Atari games](https://deepmind.com/research/dqn/).
+It's been over a year since AlphaGo wins its match versus Lee Sedol with great victory. And not so long ago, AlphaGo Zero --self taught version of AlphaGo-- has been [published](https://deepmind.google/blog/alphago-zero-starting-from-scratch/). One of the core component of AlphaGo is DQN --deep Q-network which had successfully completed a diverse of [classic Atari games](https://deepmind.google/blog/deep-reinforcement-learning/).
 
 {{< figure src="https://web.archive.org/web/20200618130300if_/https://boygeniusreport.files.wordpress.com/2016/03/google-alphago-go-win.jpg?quality=70&strip=all&w=782" title="Lee Sedol during the match" >}}
 
-Following the success of DQN, deep reinforcement learning (RL) at general has gained much popularity. The recent breakthroughs from OpenAI been released (like [this](http://www.gamersgreed.com/openai-uses-gta-v-to-train-ai-for-driving/) and [this](https://blog.openai.com/more-on-dota-2/)), has proved further capabilities of deep RL. In this post, I'm going to tell my story about building a simple deep RL agent to play Atari Pong.
+Following the success of DQN, deep reinforcement learning (RL) at general has gained much popularity. The recent breakthroughs from OpenAI been released (like [this](https://www.forbes.com/sites/aarontilley/2017/10/04/grand-theft-auto-v-the-rise-and-fall-of-the-diy-self-driving-car-lab/) and [this](https://openai.com/index/more-on-dota-2/)), has proved further capabilities of deep RL. In this post, I'm going to tell my story about building a simple deep RL agent to play Atari Pong.
 
 # Lets Start with Some Theory
 
@@ -32,7 +32,7 @@ There are few core component of reinforment learning: **environment state**, **a
 
 {{< figure src="https://cdn-images-1.medium.com/max/1600/1*HvoLc50Dpq1ESKuejhICHg.png" title="RL loopback" >}}
 
-Main goal of RL is to determine the best policy in order to maximize the *expected rewards*. We can imagine a policy as a path need to be taken to reach the goal. The longer the path taken, the least score can be obtained. If we for example, take the "dangerous" path which contains trap, we get the penalty and reducing the final score too. To achieve the best policy, sometimes we need to leave the most promising policy to explore another uncertain policy. This problem known as [**exploration vs exploitation dilemma**](https://towardsdatascience.com/intuition-exploration-vs-exploitation-c645a1d37c7a). 
+Main goal of RL is to determine the best policy in order to maximize the *expected rewards*. We can imagine a policy as a path need to be taken to reach the goal. The longer the path taken, the least score can be obtained. If we for example, take the "dangerous" path which contains trap, we get the penalty and reducing the final score too. To achieve the best policy, sometimes we need to leave the most promising policy to explore another uncertain policy. This problem known as [**exploration vs exploitation dilemma**](https://www.youtube.com/watch?v=XppywGzhaXE). 
 
 Using value function, we could determine whether our policy is good enough or need to be improved. Basically, there are 2 main method for policy improvement, by using **policy update** and **value update**. Value based method perform update by choosing maximum value available for each state. Maximum value computed by taking all possible action and take the most promising ones. Value based method does not care about certain policy during learning phase. On the other hand, policy based certainly does care about policy. This method changing policy step by step until value obtained maximized. **In short, value based is good for minimal state space, and policy based is good for minimal actions**. For further explanation, I suggest you to read my references on the bottom of this page. My post here will focus only on my experiment about Atari Pong games.
 
@@ -42,7 +42,7 @@ Using value function, we could determine whether our policy is good enough or ne
 
 Now, we are going to decide which method will we use. There are some concerns about that. First of all, our pong table is an example of **continous environment**. Even though our monitor screen is finite, of course we cannot enumerate all possible states of pong table condition. Hence, we still prefer using simpler method using policy based approach called policy gradient. 
 
-In plain English, policy gradient is a method to compute rate of reward change over a policy applied at current state. Probabilities for each action will increase based on cumulative reward reached. Higher reward gotten, higher chance the action will be performed. I am going to use [`gym`](https://gym.openai.com) package from OpenAI. They provide numerous environment samples for machine learning training and testing. And the best part of it is they are given in **discrete inputs**.
+In plain English, policy gradient is a method to compute rate of reward change over a policy applied at current state. Probabilities for each action will increase based on cumulative reward reached. Higher reward gotten, higher chance the action will be performed. I am going to use [`gym`](https://openai.com/index/openai-gym-beta/) package from OpenAI. They provide numerous environment samples for machine learning training and testing. And the best part of it is they are given in **discrete inputs**.
 
 Next, we need to design our DNN structure. For the input, we are given a `210x160x3` byte array represent a window frame. We would like to preprocessing this frame to make it easier for our NN doing learning. This can be done by crop the outside border and convert all pixel to binary color (black and white). There are 6 available action in the environment given, so thats our output layer should look like. We will use 1 hidden layer with 800 neuron and mapping those to 6 output layer.
 
@@ -66,6 +66,5 @@ After training has completed, you can run the script with turning on param `resu
 - [Deep Reinforcement Learning Demysitifed (Episode 2) — Policy Iteration, Value Iteration and Q-learning](https://medium.com/@m.alzantot/deep-reinforcement-learning-demysitifed-episode-2-policy-iteration-value-iteration-and-q-978f9e89ddaa)
 - [Pong with Reinforcement Learning Tutorial](http://karpathy.github.io/2016/05/31/rl/)
 - [Simple RL Series with Tensorflow](https://medium.com/@awjuliani/super-simple-reinforcement-learning-tutorial-part-2-ded33892c724)
-- [Lecture slide from David Silver](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/pg.pdf)
+- [Lecture slide from David Silver](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-7-policy-gradient-methods.pdf)
 - [Summary and additional resources about policy gradient method](https://github.com/dennybritz/reinforcement-learning/tree/master/PolicyGradient)
-
