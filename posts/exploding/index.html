@@ -138,7 +138,7 @@ if (!doNotTrack) {
   <meta itemprop="name" content="Exploding Image">
 <meta itemprop="description" content="On my last summer intern, I was assigned to a bug fixing job. It seems not a big deal at first. Only fixing timeout while uploading image. But, when I try to add timeout to 1 min, still got a timeout."><meta itemprop="datePublished" content="2017-10-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-10-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="596">
+<meta itemprop="wordCount" content="598">
 <meta itemprop="keywords" content="security,bug,development,testing,," />
   
   <meta property="og:title" content="Exploding Image" />
@@ -306,13 +306,13 @@ if (!doNotTrack) {
   </header>
 
   <section><p>On my last summer intern, I was assigned to a bug fixing job. It seems not a big deal at first. Only fixing timeout while uploading image. But, when I try to add timeout to 1 min, still got a timeout. Up to 5 min, didn&rsquo;t fix yet. Even, for 30 min timeout, no improvement. Then, I asked ops team to check the debug log. And, kaboom!! We got a sawtooth memory pattern and some RuntimeErrorException leftover.</p>
-<figure><img src="https://plumbr.io/app/uploads/2016/02/java-memory-usage-example.png"/><figcaption>
+<figure><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*Y7a-K84feEVYzzF_."/><figcaption>
             <h4>Sawtooth footprint</h4>
         </figcaption>
 </figure>
 
 <p>Surely, there is something wrong. I tried to figure out how image preprocess work. We used <a href="https://github.com/rkalla/imgscalr">imgscalr</a> back then. Their site claimed that it is (up until this post made) the fastest Java image scaling library ever. I ran a few test against <a href="https://i.pinimg.com/originals/ed/9f/8a/ed9f8acd065cf7d19584f0984648e31f.jpg">large</a> <a href="https://farm4.staticflickr.com/3182/2893346171_11a4df8533_o.jpg">images</a>, and even a <a href="http://media.rhizome.org/blog/3942/14.jpg">corrupted image</a>. And then, I realized something bad. <strong>The only pre-preprocessing job we done was checking image size.</strong> If size of the image didn&rsquo;t exceess few MB, then crop, rescale. But, what if some huge images with only monotonic colors appear like this?</p>
-<figure><img src="http://cphmade.org/wordpress/wp-content/uploads/2016/05/FM_201_1500_White.jpg"/><figcaption>
+<figure><img src="https://koneko096.github.io/img/blown.jpg"/><figcaption>
             <h4>It&#39;s a trap!</h4>
         </figcaption>
 </figure>
@@ -320,6 +320,11 @@ if (!doNotTrack) {
 <p>If you could guess what happened here, you may want to skip this part below.</p>
 <h2 id="image-compression">Image compression</h2>
 <p>Let&rsquo;s review a bit about our sight first. We got image of our surrounding by receiving light emitted and/or reflected by anothers through our eyes. Then, our eye lenses focus the light toward the retina. Our retina contains million light receptor nerves &ndash;<a href="https://en.wikipedia.org/wiki/Layer_of_rods_and_cones">cone and rod cells</a>. Every discrete signal come to the cone and rod cells, then merged and percepted by our brain to make a single, continous perception of image. Thanks to it, actually we could see a single line by connecting even only a few dots.</p>
+<figure><img src="https://koneko096.github.io/img/eye.jpg"/><figcaption>
+            <h4>Eye receptors</h4>
+        </figcaption>
+</figure>
+
 <p>And then, monitor was invented. Based on the fact above, we started to make a discrete grids contain light with certain color to simulate a sight. Every square in the grid (later called as pixel), contains combination of 3 or 4 colors combined (sRGB or CMYK). Now, we could receive sufficient light to be percepted as an image.</p>
 <p>We could just save this raw grid to, for example a 2D array. But, this representation doesn&rsquo;t suit at all for storage. If we want to save let&rsquo;s say 1024 * 720 image, we need about 1024 * 720 * 4 = 2949120 pixel bytes or about 2.6 MB. Back then, when average disk capacity only about 1 GB, it could only contain 350 images with such resolution. Way too little! Then, how come we could store videos with thousand frames?</p>
 <p>Thats how image compression plays a role. Image compression helps us eliminate the information redundancy from pixels. There are various algorithm developed for compress an image. What we usually called image format, most of it tied with a certain compression method. For example <a href="https://en.wikipedia.org/wiki/JPEG">JFIF/JPEG</a> format which performs <a href="https://en.wikipedia.org/wiki/Lossy_compression">lossy compression</a> and widely known for it&rsquo;s <a href="https://cloudinary.com/blog/why_jpeg_is_like_a_photocopier">tiny ratio</a>.</p>
