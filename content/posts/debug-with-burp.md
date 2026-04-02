@@ -16,10 +16,4 @@ For example, we want to test whether certain object spawned when a method is cal
 
 Briefly, [Burp (Suite)](https://portswigger.net/burp) is an all-in-one toolset for testing web apps security. It consists of several tools like Proxy, Sniper, Intruder, and Repeater. One of the promising module is proxy tool. Burp can act as a web proxy, log all pass-through web traffic, and even intercept to make alteration to the packet.
 
-{{< figure src="http://www.e-spincorp.com/espinv3/images/burp_proxy.png" title="Kansei Drifto" >}}
-
 **Interesting, now what can this thing do?**
-
-{{< figure src="https://s2.postimg.org/sd7lj84mx/Screenshot_59.png" title="Kansei Drifto" >}}
-
-{{< figure src="https://s2.postimg.org/ytgk9bd6h/Screenshot_61.png" title="Kansei Drifto" >}}
